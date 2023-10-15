@@ -7,6 +7,7 @@ void display(int arr[], int n){
     }
     cout << "\n";
 }
+
 void display_vector(vector<int> v){
     for(auto i : v){
         cout << i << " ";
