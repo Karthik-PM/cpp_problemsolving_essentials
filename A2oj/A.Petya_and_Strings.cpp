@@ -30,7 +30,6 @@ int main(int argc, char const *argv[])
             break;
         }
         if(s1[i] < s2[i]){
-            std::cout << s1[i] << " " << s2[i] << "\n";
             res = -1;
             break;
         }
