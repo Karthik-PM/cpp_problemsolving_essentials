@@ -29,8 +29,7 @@ int main(int argc, char const *argv[])
                 if(j != 0){
                     location[i][j - 1] += toggle[i][j];
                 }
-            }
-            
+            } 
         }
     }
 
