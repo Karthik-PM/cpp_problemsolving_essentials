@@ -11,10 +11,8 @@ int main(int argc, char const *argv[])
         std::cin >> r;
         if(l <= r){
             cost += (r - l); 
-            std::cout << l << " " << r  << " " << r - l << "\n";
         } else if(l > r) {
             cost += (n - l) + r;
-            std::cout << l << " " << r << " " << (n - l) + r << "\n";
         }
         l = r;
     }
