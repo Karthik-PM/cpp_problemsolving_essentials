@@ -3,38 +3,39 @@
 int main(int argc, char const *argv[])
 {
     int k;
-    std::string inp;
-    std::cin >> k >> inp;
-    std::string dis = "";
+    std::cin >> k;
+    std::string str;
+    std::cin >> str;
+
     std::map<char, int> mp;
-    int val = 0;
-    for(char c : inp){
-        if(dis.find(c) == std::string::npos){ // if it dosent contain the character
-            dis += c;
-        }
-        mp[c] ++;
-        val = mp[c];
+    for(char c : str){
+        mp[c]++;
     }
 
-    bool flag = false;
+    bool flag = true;
     for(auto m : mp){
-        if(m.second != val){
-            flag = true;
+        if(m.second % k != 0){
+            flag = false;
             break;
         }
     }
 
-    int t = k;
     std::string res = "";
-    while (t--)
-    {
-        res += dis;
+
+    for(auto m : mp){
+        for(int i = 0; i < (m.second / k); i++){
+            res += std::string(1, m.first);
+        }
     }
-    
-    if(flag){
-        std::cout << -1 << "\n";
-    }else{
-        std::cout << res << "\n";
+    if(!flag) std::cout << -1 << "\n";
+    else {
+        int t = k;
+        std::string res1 = "";
+        while (t--)
+        {
+            res1 += res;
+        }
+        std::cout << res1 << "\n";
     }
     return 0;
 }
