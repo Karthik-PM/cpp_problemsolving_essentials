@@ -1,10 +1,4 @@
 #include <bits/stdc++.h>
-void print(std::vector<int> vec){
-    for(auto i : vec){
-        std::cout << i << " ";
-    }
-    std::cout << "\n";
-}
 void solve(std::vector<int> vec){
     int start = 0;
     int end = vec.size() - 1;
@@ -48,10 +42,7 @@ void solve(std::vector<int> vec){
         if(nearest_zero < start){
             break;
         }
-        /* std::cout << nearest_zero << "\n"; */
         std::swap(vec[nearest_zero], vec[end]);
-        /* print(vec); */
-        /* std::cout << nearest_zero << " " << end << "\n"; */
         ans ++;
     }
 
@@ -68,7 +59,6 @@ int main(int argc, char const *argv[])
         std::vector<int> vec(n);
         for(int i = 0; i < n; i++){
             std::cin >> vec[i];
-            // std::cout << vec[i] << " ";
         }
         solve(vec);
     }
