@@ -46,14 +46,6 @@ int main(int argc, const char** argv) {
 
     std::unordered_map<std::string, std::vector<std::string>> adjList = buildAdjList(edges);
 
-    /* for(auto edge : adjList){ */
-    /*     std::cout << edge.first << " "; */
-
-    /*     for(auto neighbour : edge.second){ */
-    /*         std::cout << neighbour << " "; */
-    /*     } */
-    /*     std::cout << std::endl; */
-    /* } */
 
     std::set<std::string> visit;
     std::cout << dfs("A", "D", adjList, visit) << std::endl;
