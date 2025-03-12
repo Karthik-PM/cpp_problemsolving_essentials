@@ -7,16 +7,17 @@ int main(int argc, const char** argv) {
 
     std::cin >> n;
 
+    std::string ns = std::to_string(n);
 
 
-    std::function<ll (ll)> solve = [&] (ll n) -> ll {
+    std::function<int (int)> solve = [&] (int n) -> int {
         std::vector<ll> dp(n + 1, INT_MAX);
         dp[0] = 0;
-        for(ll i = 1; i <= n; i++){
-            ll val = i;
-            while(val){
-                dp[i] = std::min(dp[i], dp[i - val % 10] + 1);
-                val /= 10;
+        for(ll i = 1; i <= n; i++){;
+            std::string ki = std::to_string(i);
+            for(char c : ki){
+                ll digit = c - '0';
+                if(digit > 0) dp[i] = std::min(dp[i], dp[i - digit] + 1);
             }
         }
         return dp[n];
