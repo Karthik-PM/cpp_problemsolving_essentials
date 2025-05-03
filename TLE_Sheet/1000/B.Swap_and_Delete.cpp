@@ -24,6 +24,7 @@ void solve(){
         std::cout << s.size() - t_count<< std::endl;
     }
 }
+
 int main(int argc, const char** argv) {
     solve();
     return 0;
